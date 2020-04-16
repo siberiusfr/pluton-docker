@@ -1,8 +1,9 @@
 version: '3.7'
-
 services:
+
   postgres:
-    container_name: postgres_container
+    container_name: pluton_postgres
+    hostname: pluton_postgres
     image: postgres
     environment:
       POSTGRES_USER: postgres
@@ -15,9 +16,13 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+
   pgadmin:
     container_name: pgadmin_container
+    hostname: pgadmin_container
     image: dpage/pgadmin4
+    depends_on:
+      - postgres
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@siberius.fr}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
