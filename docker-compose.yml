@@ -6,6 +6,7 @@ services:
     hostname: pluton_postgres
     image: postgres
     environment:
+      POSTGRES_DB: pultondb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
@@ -29,8 +30,7 @@ services:
     ports:
       - 5050:80
     restart: unless-stopped
-
-
+    
 volumes:
   postgres:
-  pgadmin:
+    pgadmin:
