@@ -6,7 +6,7 @@ services:
     hostname: pluton_postgres
     image: postgres
     environment:
-      POSTGRES_DB: pultondb
+      POSTGRES_DB: pulton
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
