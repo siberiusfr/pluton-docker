@@ -6,9 +6,9 @@ services:
     hostname: pluton_app
     image: aymenmehri/pluton:0.0.1-SNAPSHOT
     environment:
-      POSTGRES_URL: jdbc:postgresql://pluton_postgres:5432/pluton
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: changeme
+      SPRING_DATASOURCE_URL: jdbc:postgresql://pluton_postgres:5432/pluton
+      SPRING_DATASOURCE_USER: postgres
+      SPRING_DATASOURCE_PASSWORD: changeme
     ports:
       - 8080:8080
     restart: unless-stopped
